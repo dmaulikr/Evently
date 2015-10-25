@@ -8,15 +8,17 @@
 
 import UIKit
 import Parse
+import FBSDKLoginKit
 
 class SignUpInViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     @IBAction func signUp(sender: AnyObject) {
-        if #available(iOS 8.0, *) {
+        //if #available(iOS 8.0, *) {
             let alertController = UIAlertController(title: "Agree to terms and conditions", message: "Click I AGREE to signal that you aree to the End User License Agreement.", preferredStyle: UIAlertControllerStyle.Alert)
             
             alertController.addAction(UIAlertAction(title: "I AGREE", style: UIAlertActionStyle.Default, handler: {alertController in self.processSignUp()})
@@ -27,7 +29,7 @@ class SignUpInViewController: UIViewController {
             //Display alert
             self.presentViewController(alertController, animated: true, completion: nil)
             
-        }
+        //}
         
     }
     
@@ -108,7 +110,10 @@ class SignUpInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orangeColor()
-
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
         // Do any additional setup after loading the view.
     }
 
@@ -117,6 +122,7 @@ class SignUpInViewController: UIViewController {
         
         activityIndicator.hidden = true
         activityIndicator.hidesWhenStopped = true
+
         // Dispose of any resources that can be recreated.
     }
     
