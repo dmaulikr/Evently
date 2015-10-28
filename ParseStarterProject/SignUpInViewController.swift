@@ -107,6 +107,11 @@ class SignUpInViewController: UIViewController {
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    func dismissKeyboard(){
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orangeColor()
@@ -114,6 +119,11 @@ class SignUpInViewController: UIViewController {
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
+        
+        //tap gesture
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tap)
+        
         // Do any additional setup after loading the view.
     }
 

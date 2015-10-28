@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7620D7521BDD7F1B00B94775 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		7620D7541BDD81DA00B94775 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76669D4C1BD45200007C001F /* SignUpInViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		76669D4C1BD45200007C001F /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				76669D4C1BD45200007C001F /* SignUpInViewController.swift */,
 				76DE369C1BD4AF19009801BF /* HomeViewController.swift */,
+				76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */,
 			);
 			name = EventlyiOSProject;
 			path = ParseStarterProject;
@@ -221,6 +224,7 @@
 			files = (
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */,
 				76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */,
 				76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */,
 			);
@@ -331,7 +335,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/vanessadyce/Documents/FacebookSDK,
+					"/Users/vanessadyce/Documents/mobile/ios/evently-app/Evently/FacebookSDK",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -351,7 +355,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/vanessadyce/Documents/FacebookSDK,
+					"/Users/vanessadyce/Documents/mobile/ios/evently-app/Evently/FacebookSDK",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
