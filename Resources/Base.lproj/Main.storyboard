@@ -115,6 +115,22 @@
             <point key="canvasLocation" x="-1377" y="321"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="3Vk-95-qJH">
+            <objects>
+                <navigationController id="5TZ-lk-Y5P" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhv-8j-Ht5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="U8J-iu-c4V" kind="relationship" relationship="rootViewController" id="qyv-fj-ie2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2h-Ld-Fbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="1059"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="yzv-iw-Yul">
             <objects>
                 <navigationController id="OKv-hA-Ydb" sceneMemberID="viewController">
@@ -213,10 +229,24 @@
                                 <action selector="signOut:" destination="qYK-dz-hMO" id="I0o-cs-tT0"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ZRK-sf-p0K">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vvq-Qn-pdT">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find Event"/>
+                                <connections>
+                                    <segue destination="5TZ-lk-Y5P" kind="presentation" identifier="findEventNavigation" id="wf8-eG-el9"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="findEvent:" destination="qYK-dz-hMO" id="nVI-H0-aUG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventTitle" destination="bOG-hA-U6J" id="yrJ-T5-d4Y"/>
+                        <outlet property="findEventButton" destination="ZRK-sf-p0K" id="aWG-wh-RKk"/>
                         <outlet property="userEmail" destination="yZ3-aF-Vb7" id="bhE-YF-DYD"/>
                     </connections>
                 </viewController>
@@ -224,22 +254,6 @@
                 <tapGestureRecognizer id="AP5-0q-mW4"/>
             </objects>
             <point key="canvasLocation" x="82" y="321"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uxo-Rv-MjM">
-            <objects>
-                <navigationController id="Y6M-Pd-DDj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2g-Zd-0XP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="U8J-iu-c4V" kind="relationship" relationship="rootViewController" id="6oG-vc-hS5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xem-dx-jQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="76" y="1029"/>
         </scene>
         <!--CreateEventViewController-->
         <scene sceneID="oxc-nA-vnk">
@@ -289,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5s-XZ-KGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="1804"/>
+            <point key="canvasLocation" x="82" y="1800"/>
         </scene>
     </scenes>
 </document>

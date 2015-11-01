@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate  {
 
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var eventTitle: UITextField!
-    
+    @IBOutlet weak var findEventButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +98,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate  {
             }
         })
     }
-
+    
+    @IBAction func findEvent(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()){
+            self.performSegueWithIdentifier("findEventxNavigation", sender: self)
+        }
+    }
+    
     
 //    @IBAction func createEvent(sender: AnyObject) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
