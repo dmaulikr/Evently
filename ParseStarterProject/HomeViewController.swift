@@ -10,11 +10,12 @@ import UIKit
 import Parse
 import EventKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate  {
+class HomeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var findEventButton: UIBarButtonItem!
+    @IBOutlet weak var searchForEventButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate  {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storyboard.instantiateViewControllerWithIdentifier("CreateEventViewController") as UIViewController
 //        self.presentViewController(vc, animated: true, completion: nil)
+        
         self.performSegueWithIdentifier("createEventNavigation", sender: self)
     }
     
@@ -99,11 +101,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate  {
         })
     }
     
-    @IBAction func findEvent(sender: AnyObject) {
-        dispatch_async(dispatch_get_main_queue()){
-            self.performSegueWithIdentifier("findEventxNavigation", sender: self)
-        }
-    }
+//    @IBAction func findEvent(sender: AnyObject) {
+//        dispatch_async(dispatch_get_main_queue()){
+//            self.performSegueWithIdentifier("findEventNavigation", sender: self)
+//        }
+//    }
+//    
+//    @IBAction func searchForEvent(sender: AnyObject) {
+//        dispatch_async(dispatch_get_main_queue()){
+//            self.performSegueWithIdentifier("findEventNavigation", sender: self)
+//        }
+//    }
     
     
 //    @IBAction func createEvent(sender: AnyObject) {

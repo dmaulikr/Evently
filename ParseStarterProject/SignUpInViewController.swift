@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import FBSDKLoginKit
+import CoreData
 
 class SignUpInViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class SignUpInViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
+    @IBOutlet weak var name: UITextField!
     
     @IBAction func signUp(sender: AnyObject) {
         //if #available(iOS 8.0, *) {
@@ -37,6 +39,12 @@ class SignUpInViewController: UIViewController {
         
         var userEmail = email.text
         let userPassword = password.text
+        
+//        let newPerson: NSEntityDescription.entityForName;("Person", inManagedObjectContext:self.managedObjectContext,
+//        NSManagedObject(entity: Person, insertIntoManagedObjectContext: self.managedObjectContext)
+//        newPerson.setValue("Jim", forKey: "first")
+//        var children: NSMutableSet = newPerson.mutableSetValueForKey("children")
+//        children.addObject(newPerson)
         
         // ensure username is lowercase
         userEmail = userEmail?.lowercaseString

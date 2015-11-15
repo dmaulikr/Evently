@@ -8,13 +8,16 @@
 
 import UIKit
 import EventKit
+import CoreData
 
 class CreateEventViewController: UIViewController {
     let eventStore = EKEventStore()
     var calendars: [EKCalendar]?
 
+    //@IBOutlet weak var eventName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+       // dismissKeyboard()
         
 
         // Do any additional setup after loading the view.
@@ -54,6 +57,10 @@ class CreateEventViewController: UIViewController {
             }
         })
     }
+    
+//    func dismissKeyboard(){
+//        eventName.resignFirstResponder()
+//    }
     
     /*
     // MARK: - Navigation
