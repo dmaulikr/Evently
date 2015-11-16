@@ -21,22 +21,24 @@ class SignUpInViewController: UIViewController {
     
     @IBAction func signUp(sender: AnyObject) {
         //if #available(iOS 8.0, *) {
-            let alertController = UIAlertController(title: "Agree to terms and conditions", message: "Click I AGREE to signal that you aree to the End User License Agreement.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alertController.addAction(UIAlertAction(title: "I AGREE", style: UIAlertActionStyle.Default, handler: {alertController in self.processSignUp()})
-            )
-            alertController.addAction(UIAlertAction(title: "I do NOT agree", style: UIAlertActionStyle.Default, handler: nil)
-            )
-            
-            //Display alert
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
+//            let alertController = UIAlertController(title: "Agree to terms and conditions", message: "Click I AGREE to signal that you aree to the End User License Agreement.", preferredStyle: UIAlertControllerStyle.Alert)
+//            
+//            alertController.addAction(UIAlertAction(title: "I AGREE", style: UIAlertActionStyle.Default, handler: {alertController in self.processSignUp()})
+//            )
+//            alertController.addAction(UIAlertAction(title: "I do NOT agree", style: UIAlertActionStyle.Default, handler: nil)
+//            )
+//            
+//            //Display alert
+//            self.presentViewController(alertController, animated: true, completion: nil)
+//            
+        processSignUp()
         //}
         
     }
     
     func processSignUp(){
         
+        print("processing signup")
         var userEmail = email.text
         let userPassword = password.text
         
@@ -55,6 +57,7 @@ class SignUpInViewController: UIViewController {
         
         // Create the user
         let user = PFUser()
+        //user.username = "Ronnie Smith"
         user.username = userEmail
         user.password = userPassword
         user.email = userEmail
