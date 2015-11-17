@@ -12,6 +12,8 @@ import CoreData
 
 class FindEventViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var budget: UITextField!
+    @IBOutlet weak var distance: UITextField!
     @IBOutlet weak var locationLabel: UILabel!
     //@IBOutlet weak var locationLabel: UILabel!
     let locationManager = CLLocationManager()
@@ -22,7 +24,6 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         print("locationManager")
-
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
@@ -35,11 +36,18 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let toResults = segue.destinationViewController as! ResultsViewController
+        toResults.budget = Int(budget.text!)!
+        toResults.distance = Int(distance.text!)!
+    }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
 //        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)-&gt;)
 //            if error{

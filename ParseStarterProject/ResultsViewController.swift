@@ -11,20 +11,18 @@ import CoreData
 
 
 
-class ResultsViewController: UIViewController, UTTableViewController, UITableViewDataSource{
+class ResultsViewController: UITableViewController {
 
     var events = [Event]()
-    @IBOutlet var tableView: UITableView!
-    var places = [NSManagedObject]()
+    var budget: Int = 0
+    var distance: Int = 0
+    //@IBOutlet var tableView: UITableView!
+    //var places = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\"Oh The Places You'll Go\""
+        title = "Your Suggested Events"
         loadSampleEvents()
-        
-        //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
-        // Do any additional setup after loading the view.
     }
     
     func loadSampleEvents(){
@@ -36,17 +34,33 @@ class ResultsViewController: UIViewController, UTTableViewController, UITableVie
         let event6 = Event(name: "Regal Cinemas Stonefield 14 & IMAX", location: "1954 Swanson Dr, Charlottesville, VA 22901", budget: 30, type: "A")
         let event7 = Event(name: "Humpback Rock", location: "5846 Blue Ridge Pkwy, Afton, VA", budget: 0, type: "F")
         let event8 = Event(name: "Carter Mountain Orchard", location: "1435 Carters Mountain Trail, Charlottesville, VA 22901", budget: 0, type: "F")
-        events.append(event1!)
-        events.append(event2!)
-        events.append(event3!)
-        events.append(event4!)
-        events.append(event5!)
-        events.append(event6!)
-        events.append(event7!)
-        events.append(event8!)
         
-        //events += [event1, event2, event3, event4, event5, event6, event7, event8]
-
+        //conditionally append events if they are within the user's budget
+        if(event1?.budget <= budget){
+            events.append(event1!)
+        }
+        if(event2?.budget <= budget){
+            events.append(event2!)
+        }
+        if(event3?.budget <= budget){
+            events.append(event3!)
+        }
+        if(event4?.budget <= budget){
+            events.append(event4!)
+        }
+        if(event5?.budget <= budget){
+            events.append(event5!)
+        }
+        if(event6?.budget <= budget){
+            events.append(event6!)
+        }
+        if(event7?.budget <= budget){
+            events.append(event7!)
+        }
+        if(event8?.budget <= budget){
+            events.append(event8!)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,62 +68,46 @@ class ResultsViewController: UIViewController, UTTableViewController, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "createEvent"){
+            let toCreateEvent = segue.destinationViewController as! CreateEventViewController
+            let indexPath: NSIndexPath = (tableView.indexPathForSelectedRow)!
+            toCreateEvent.budget = events[indexPath.row].budget
+            toCreateEvent.name = events[indexPath.row].name
+            toCreateEvent.location = events[indexPath.row].location
+        }
+        
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
-    }
-    
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-        return places.count
+        return events.count
     }
 
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell")
+            let cellIdentifier = "EventTableViewCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
+            //let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
             
-            let place = places[indexPath.row]
+            let event = events[indexPath.row]
+        
+        cell.eventName.text = event.name
+        cell.eventLocation.text = event.location
+        cell.eventBudget.text = String(event.budget)
+        
+            //cell!.textLabel!.text = place.valueForKey("name") as? String
             
-            cell!.textLabel!.text = place.valueForKey("name") as? String
-            
-            return cell!
+            return cell
     }
     
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
         
-       // let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-       // let managedObjectContext = appDelegate.managedObjectContext
-
-       
-       //2
-//        let entity =  NSEntityDescription.entityForName("Place",
-//            inManagedObjectContext:managedContext)
-//        
-//        let place1 = NSManagedObject(entity: entity!,
-//            insertIntoManagedObjectContext: managedContext)
-//        place1.setValue("Lemongrass", forKey: "name")
-//        place1.setValue(15.00, forKey: "budget")
-//        place1.setValue("Restaurant", forKey: "type")
-//        
-//        //4
-//        do {
-//            try managedContext.save()
-//            //5
-//            places.append(place1)
-//        } catch let error as NSError  {
-//            print("Could not save \(error), \(error.userInfo)")
-//        }
     }
-    
-    
-
     
     func saveEvents(){
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(events, toFile: Event.ArchiveURL.path!)
@@ -121,30 +119,5 @@ class ResultsViewController: UIViewController, UTTableViewController, UITableVie
     func loadEvents() -> [Event]?{
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]
     }
-    
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let managedContext = appDelegate.managedObjectContext
-//        let fetchRequest = NSFetchRequest(entityName: "Place")
-//        
-//        do {
-//            let results =
-//                try managedContext.executeFetchRequest(fetchRequest)
-//            places = results as! [NSManagedObject]
-//        } catch let error as NSError {
-//            print("Could not fetch \(error), \(error.userInfo)")
-//        }
-//    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
