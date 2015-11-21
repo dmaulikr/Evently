@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orangeColor()
 
-        self.userEmail.text = PFUser.currentUser()?.email
+        self.userEmail.text = PFUser.currentUser()?.username
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)

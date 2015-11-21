@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7607D8771BE98E0A00489C71 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D8761BE98E0A00489C71 /* ResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7607D87D1BEADF9800489C71 /* FindEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D87C1BEADF9800489C71 /* FindEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7620D7521BDD7F1B00B94775 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		7620D7541BDD81DA00B94775 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		762F6B221BF99E230078F668 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B211BF99E230078F668 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
+		762F6B241BFA92BB0078F668 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		762F6B281BFB0FA40078F668 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762F6B271BFB0FA40078F668 /* AVFoundation.framework */; };
+		762F6B2C1BFB124F0078F668 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 762F6B2B1BFB124F0078F668 /* ding.wav */; settings = {ASSET_TAGS = (); }; };
 		76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76669D4C1BD45200007C001F /* SignUpInViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE369C1BD4AF19009801BF /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
@@ -26,9 +33,16 @@
 
 /* Begin PBXFileReference section */
 		76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		7607D8761BE98E0A00489C71 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		7607D87C1BEADF9800489C71 /* FindEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEventViewController.swift; sourceTree = "<group>"; };
 		7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		762F6B211BF99E230078F668 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		762F6B271BFB0FA40078F668 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		762F6B2B1BFB124F0078F668 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		76669D4C1BD45200007C001F /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
+		76A7492C1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		76DE369C1BD4AF19009801BF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -52,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762F6B281BFB0FA40078F668 /* AVFoundation.framework in Frameworks */,
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
 				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
 				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
@@ -69,6 +84,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				762F6B2B1BFB124F0078F668 /* ding.wav */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
@@ -97,11 +113,16 @@
 			isa = PBXGroup;
 			children = (
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				76669D4C1BD45200007C001F /* SignUpInViewController.swift */,
 				76DE369C1BD4AF19009801BF /* HomeViewController.swift */,
 				76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */,
+				7607D8761BE98E0A00489C71 /* ResultsViewController.swift */,
+				7607D87C1BEADF9800489C71 /* FindEventViewController.swift */,
+				762F6B211BF99E230078F668 /* Event.swift */,
+				762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */,
 			);
 			name = EventlyiOSProject;
 			path = ParseStarterProject;
@@ -110,6 +131,7 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				762F6B271BFB0FA40078F668 /* AVFoundation.framework */,
 				7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */,
 				7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */,
 				81BA816B1A49DB6800E65899 /* Bolts.framework */,
@@ -193,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762F6B2C1BFB124F0078F668 /* ding.wav in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 			);
@@ -223,9 +246,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				762F6B221BF99E230078F668 /* Event.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				7607D87D1BEADF9800489C71 /* FindEventViewController.swift in Sources */,
+				76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */,
+				7607D8771BE98E0A00489C71 /* ResultsViewController.swift in Sources */,
 				76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */,
 				76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */,
+				762F6B241BFA92BB0078F668 /* EventTableViewCell.swift in Sources */,
 				76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +415,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76A7492C1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 76A7492C1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 81BA813D1A49DA1800E65899 /* Project object */;
 }

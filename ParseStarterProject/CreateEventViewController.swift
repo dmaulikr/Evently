@@ -9,15 +9,44 @@
 import UIKit
 import EventKit
 import CoreData
+import AVFoundation
 
 class CreateEventViewController: UIViewController {
     let eventStore = EKEventStore()
     var calendars: [EKCalendar]?
+    var budget: Int = 0
+    var location: String = ""
+    var name: String = ""
+    var buttonSound : AVAudioPlayer?
+//
+    @IBOutlet weak var eventTime: UIDatePicker!
+    @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventLocation: UITextField!
 
-    //@IBOutlet weak var eventName: UITextField!
+//    @IBOutlet weak var eventDescription: UITextField!
+//    @IBOutlet weak var eventDate: UITextField!
+//    @IBOutlet weak var eventTime: UITextField!
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer? {
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
+        
+        var audioPlayer:AVAudioPlayer?
+        
+        do{
+            try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+        }
+        catch{
+            print("Player not availavle")
+        }
+        return audioPlayer
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-       // dismissKeyboard()
+        self.view.backgroundColor = UIColor.orangeColor()
+        print("the selected name is:", name)
+        eventName.text = name;
+        eventLocation.text = location
+        // dismissKeyboard()
         
 
         // Do any additional setup after loading the view.
@@ -28,17 +57,40 @@ class CreateEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     
-    
-    
+//    @IBAction func makeEvent(sender: AnyObject){
+//        let store = EKEventStore()
+//        store.requestAccessToEntityType(EKEntityType.Event, completion: {(accessGranted:Bool, error: NSError?) in
+//            if accessGranted == true {
+//                let event = EKEvent(eventStore: store)
+//                event.title = "Event Title"
+//                event.startDate = NSDate() //today
+//                event.endDate = event.startDate.dateByAddingTimeInterval(60*60) //1 hour long meeting
+//                event.calendar = store.defaultCalendarForNewEvents
+//                //let err: NSError?
+//                do {
+//                    //try store.saveEvent(event, span: EKSpan.ThisEvent)
+//                    try store.saveEvent(event, span: EKSpan.ThisEvent)
+//                    print("Saved Event")
+//
+//                } catch {
+//                    // report error
+//                }
+//                
+//                //self.savedEventId = event.eventIdentifier //save event id to access this particular event later
+//            } else {
+//                print("Need to get permission")
+//            }
+//        })
+//    }
     @IBAction func makeEvent(sender: AnyObject){
         let store = EKEventStore()
         store.requestAccessToEntityType(EKEntityType.Event, completion: {(accessGranted:Bool, error: NSError?) in
             if accessGranted == true {
                 let event = EKEvent(eventStore: store)
-                event.title = "Event Title"
-                event.startDate = NSDate() //today
+                let nameOfEvent = self.eventName.text
+                event.title = nameOfEvent!
+                event.startDate = self.eventTime.date
                 event.endDate = event.startDate.dateByAddingTimeInterval(60*60) //1 hour long meeting
                 event.calendar = store.defaultCalendarForNewEvents
                 //let err: NSError?
@@ -46,16 +98,25 @@ class CreateEventViewController: UIViewController {
                     //try store.saveEvent(event, span: EKSpan.ThisEvent)
                     try store.saveEvent(event, span: EKSpan.ThisEvent)
                     print("Saved Event")
-
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alert: UIAlertView = UIAlertView(title: "Event Saved", message: "You have saved an event to your calendar!", delegate: nil, cancelButtonTitle: "Wahoowa")
+                        alert.show()
+                        
+                        if let buttonSound = self.setupAudioPlayerWithFile("ding", type: "wav"){
+                            self.buttonSound = buttonSound
+                        }
+                        self.buttonSound?.play()
+                        
+                    })
                 } catch {
                     // report error
                 }
                 
-                //self.savedEventId = event.eventIdentifier //save event id to access this particular event later
             } else {
                 print("Need to get permission")
             }
         })
+        
     }
     
 //    func dismissKeyboard(){
