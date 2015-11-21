@@ -9,6 +9,7 @@
 import UIKit
 import EventKit
 import CoreData
+import AVFoundation
 
 class CreateEventViewController: UIViewController {
     let eventStore = EKEventStore()
@@ -16,6 +17,7 @@ class CreateEventViewController: UIViewController {
     var budget: Int = 0
     var location: String = ""
     var name: String = ""
+    var buttonSound : AVAudioPlayer?
 //
     @IBOutlet weak var eventTime: UIDatePicker!
     @IBOutlet weak var eventName: UITextField!
@@ -24,9 +26,23 @@ class CreateEventViewController: UIViewController {
 //    @IBOutlet weak var eventDescription: UITextField!
 //    @IBOutlet weak var eventDate: UITextField!
 //    @IBOutlet weak var eventTime: UITextField!
-    
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer? {
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
+        
+        var audioPlayer:AVAudioPlayer?
+        
+        do{
+            try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+        }
+        catch{
+            print("Player not availavle")
+        }
+        return audioPlayer
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.orangeColor()
         print("the selected name is:", name)
         eventName.text = name;
         eventLocation.text = location
@@ -85,6 +101,12 @@ class CreateEventViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(), {
                         let alert: UIAlertView = UIAlertView(title: "Event Saved", message: "You have saved an event to your calendar!", delegate: nil, cancelButtonTitle: "Wahoowa")
                         alert.show()
+                        
+                        if let buttonSound = self.setupAudioPlayerWithFile("ding", type: "wav"){
+                            self.buttonSound = buttonSound
+                        }
+                        self.buttonSound?.play()
+                        
                     })
                 } catch {
                     // report error
@@ -94,6 +116,7 @@ class CreateEventViewController: UIViewController {
                 print("Need to get permission")
             }
         })
+        
     }
     
 //    func dismissKeyboard(){

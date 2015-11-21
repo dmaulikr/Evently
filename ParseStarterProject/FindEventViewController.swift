@@ -14,13 +14,14 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var budget: UITextField!
     @IBOutlet weak var distance: UITextField!
-    @IBOutlet weak var locationLabel: UILabel!
+    //@IBOutlet weak var locationLabel: UILabel!
     //@IBOutlet weak var locationLabel: UILabel!
     let locationManager = CLLocationManager()
     
     //@IBOutlet weak var eventName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.orangeColor()
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         print("locationManager")
@@ -30,7 +31,10 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
-        // dismissKeyboard()
+        
+        //tap gesture
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tap)
         
         
         // Do any additional setup after loading the view.
@@ -46,20 +50,21 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let toResults = segue.destinationViewController as! ResultsViewController
         toResults.budget = Int(budget.text!)!
-        toResults.distance = Int(distance.text!)!
+        toResults.distance = CLLocationDistance(distance.text!)!
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
-//        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)-&gt;)
-//            if error{
-//                println("Reverse geocoder failed with error"
-//            }
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
        // let locValue2:CLLocationCoordinate2D = manager.location!
 
       //  var geocoder: CLGeocoder = CLGeocoder()
         print("locations = \(locValue.latitude) \(locValue.longitude)")
       //  locationLabel.text = "locations = \(locValue.latitude) \(locValue.longitude)"
-        locationLabel.text = "locations = \(locValue.latitude) \(locValue.longitude)"
+        //locationLabel.text = "locations = \(locValue.latitude) \(locValue.longitude)"
+    }
+    
+    func dismissKeyboard(){
+        budget.resignFirstResponder()
+        distance.resignFirstResponder()
     }
     
     

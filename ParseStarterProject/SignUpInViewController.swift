@@ -57,7 +57,6 @@ class SignUpInViewController: UIViewController {
         
         // Create the user
         let user = PFUser()
-        //user.username = "Ronnie Smith"
         user.username = userEmail
         user.password = userPassword
         user.email = userEmail
@@ -136,6 +135,17 @@ class SignUpInViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
+    }
+//    
+//    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+//        super.willAnimateRotationToInterfaceOrientation(toInterfaceOrientation, duration: duration)
+//        // = toInterfaceOrientation
+//        
+//        self.setupViewsForOrientation(toInterfaceOrientation)
+//    }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        view.setNeedsUpdateConstraints()
     }
 
     override func didReceiveMemoryWarning() {
