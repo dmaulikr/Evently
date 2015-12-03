@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import FBSDKLoginKit
 import CoreData
+import Firebase
 
 class SignUpInViewController: UIViewController {
 
@@ -129,6 +130,8 @@ class SignUpInViewController: UIViewController {
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
+        
+
         
         //tap gesture
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")

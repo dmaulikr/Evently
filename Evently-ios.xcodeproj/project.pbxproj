@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7607D8771BE98E0A00489C71 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D8761BE98E0A00489C71 /* ResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7607D87D1BEADF9800489C71 /* FindEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D87C1BEADF9800489C71 /* FindEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7620D7521BDD7F1B00B94775 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
-		7620D7541BDD81DA00B94775 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
-		762F6B221BF99E230078F668 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B211BF99E230078F668 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
-		762F6B241BFA92BB0078F668 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */; };
+		7607D8771BE98E0A00489C71 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D8761BE98E0A00489C71 /* ResultsViewController.swift */; };
+		7607D87D1BEADF9800489C71 /* FindEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607D87C1BEADF9800489C71 /* FindEventViewController.swift */; };
+		7620D7521BDD7F1B00B94775 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */; };
+		7620D7541BDD81DA00B94775 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */; };
+		762F6B221BF99E230078F668 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B211BF99E230078F668 /* Event.swift */; };
+		762F6B241BFA92BB0078F668 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */; };
 		762F6B281BFB0FA40078F668 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762F6B271BFB0FA40078F668 /* AVFoundation.framework */; };
-		762F6B2C1BFB124F0078F668 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 762F6B2B1BFB124F0078F668 /* ding.wav */; settings = {ASSET_TAGS = (); }; };
-		76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76669D4C1BD45200007C001F /* SignUpInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE369C1BD4AF19009801BF /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		762F6B2C1BFB124F0078F668 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 762F6B2B1BFB124F0078F668 /* ding.wav */; };
+		764939141C02BC9400A57B9C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764939131C02BC9400A57B9C /* Firebase.framework */; };
+		764939151C02BD5400A57B9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764939111C02B7DF00A57B9C /* Security.framework */; };
+		764939161C02BD5B00A57B9C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649390F1C02B7D400A57B9C /* CFNetwork.framework */; };
+		764939171C02BD6800A57B9C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649390D1C02B7B900A57B9C /* libc++.tbd */; };
+		7649391A1C02BDDD00A57B9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
+		7649391C1C02BEC200A57B9C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649391B1C02BEC200A57B9C /* libicucore.tbd */; };
+		76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76669D4C1BD45200007C001F /* SignUpInViewController.swift */; };
+		76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */; };
+		76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE369C1BD4AF19009801BF /* HomeViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -27,7 +33,6 @@
 		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
 		81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81761A49E0D500E65899 /* libsqlite3.dylib */; };
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
-		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +46,12 @@
 		762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		762F6B271BFB0FA40078F668 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		762F6B2B1BFB124F0078F668 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		7649390D1C02B7B900A57B9C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7649390F1C02B7D400A57B9C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		764939111C02B7DF00A57B9C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		764939131C02BC9400A57B9C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		764939181C02BD9D00A57B9C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7649391B1C02BEC200A57B9C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		76669D4C1BD45200007C001F /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		76A7492C1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		76DE369C1BD4AF19009801BF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +77,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7649391C1C02BEC200A57B9C /* libicucore.tbd in Frameworks */,
+				7649391A1C02BDDD00A57B9C /* SystemConfiguration.framework in Frameworks */,
+				764939171C02BD6800A57B9C /* libc++.tbd in Frameworks */,
+				764939161C02BD5B00A57B9C /* CFNetwork.framework in Frameworks */,
+				764939151C02BD5400A57B9C /* Security.framework in Frameworks */,
+				764939141C02BC9400A57B9C /* Firebase.framework in Frameworks */,
 				762F6B281BFB0FA40078F668 /* AVFoundation.framework in Frameworks */,
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
-				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
 				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
 				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
 				7620D7521BDD7F1B00B94775 /* FBSDKCoreKit.framework in Frameworks */,
@@ -131,6 +147,12 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7649391B1C02BEC200A57B9C /* libicucore.tbd */,
+				764939181C02BD9D00A57B9C /* UIKit.framework */,
+				764939131C02BC9400A57B9C /* Firebase.framework */,
+				764939111C02B7DF00A57B9C /* Security.framework */,
+				7649390F1C02B7D400A57B9C /* CFNetwork.framework */,
+				7649390D1C02B7B900A57B9C /* libc++.tbd */,
 				762F6B271BFB0FA40078F668 /* AVFoundation.framework */,
 				7620D7531BDD81DA00B94775 /* FBSDKLoginKit.framework */,
 				7620D7511BDD7F1B00B94775 /* FBSDKCoreKit.framework */,
@@ -363,7 +385,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"/Users/vanessadyce/Documents/mobile/ios/evently-app/Evently/FacebookSDK",
+					/Users/vanessadyce/Documents/mobile/Evently/FacebookSDK,
+					/Users/vanessadyce/Documents/mobile/Evently/Firebase.framework,
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -383,7 +406,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"/Users/vanessadyce/Documents/mobile/ios/evently-app/Evently/FacebookSDK",
+					/Users/vanessadyce/Documents/mobile/Evently/FacebookSDK,
+					/Users/vanessadyce/Documents/mobile/Evently/Firebase.framework,
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

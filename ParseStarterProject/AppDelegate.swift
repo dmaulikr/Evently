@@ -11,6 +11,7 @@ import UIKit
 import FBSDKCoreKit
 import Parse
 import CoreData
+import Firebase
 
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
@@ -35,6 +36,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate { //NSManagerObject
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
+        
+//        let event1 = Event(name: "Lemongrass", location: "104 14th St NW, Charlottesville, VA", budget: 20, type: "R", coordinate: CLLocation(latitude: 38.035362, longitude: -78.498771))
+//        let event2 = Event(name: "Burtons Grill", location: "2010 Bond St, Charlottesville, VA", budget: 40, type: "R", coordinate: CLLocation(latitude: 38.064434, longitude: -78.490378 ))
+//        let event3 = Event(name: "Now and Zen", location: "202 2nd St NW, Charlottesville, VA", budget: 20, type: "R", coordinate: CLLocation(latitude: 38.032233, longitude: -78.4816263 ))
+//        let event4 = Event(name: "Jump Charlottesville", location: "1005 Gardens Blvd, Charlottesville, VA", budget: 20, type: "A", coordinate: CLLocation(latitude: 38.084743, longitude:-78.469688 ))
+//        let event5 = Event(name: "AMF Kegler's Lanes", location: "335 Rivanna Plaza Dr, Charlottesville, VA", budget: 20, type: "A", coordinate: CLLocation(latitude: 38.092537, longitude: -78.470342))
+//        let event6 = Event(name: "Regal Cinemas Stonefield 14 & IMAX", location: "1954 Swanson Dr, Charlottesville, VA 22901", budget: 30, type: "A", coordinate: CLLocation(latitude: 38.064978, longitude: -78.493151))
+//        let event7 = Event(name: "Humpback Rock", location: "5846 Blue Ridge Pkwy, Afton, VA", budget: 0, type: "F", coordinate: CLLocation(latitude: 37.962861, longitude: -78.899935))
+//        let event8 = Event(name: "Carter Mountain Orchard", location: "1435 Carters Mountain Trail, Charlottesville, VA 22901", budget: 0, type: "F", coordinate: CLLocation(latitude: 37.991732, longitude: -78.471662))
+        
+        let myRootRef = Firebase(url: "https://evently-app.firebaseio.com")
+        let event1Ref = myRootRef.childByAppendingPath("Lemongrass")
+        event1Ref.setValue(["name": "Lemongrass", "location": "104 14th St NW, Charlottesville, VA", "budget": 20, "type": "R", "latitude":38.035362, "longitude":-78.498771])
+        
+        let event2Ref = myRootRef.childByAppendingPath("Burtons Grill")
+        event2Ref.setValue(["name": "Burtons Grill", "location": "2010 Bond St, Charlottesville, VA", "budget": 40, "type": "R", "latitude": 38.064434, "longitude": -78.490378])
+        
+        let event3Ref = myRootRef.childByAppendingPath("Now and Zen")
+        event3Ref.setValue(["name": "Now and Zen", "location": "202 2nd St NW, Charlottesville, VA", "budget": 20, "type": "R", "latitude": 38.032233, "longitude": -78.4816263])
+        
+        let event4Ref = myRootRef.childByAppendingPath("Jump Charlottesville")
+        event4Ref.setValue(["name": "Jump Charlottesville", "location": "1005 Gardens Blvd, Charlottesville, VA", "budget": 20, "type": "A", "latitude": 38.084743, "longitude":-78.469688])
+        
+        let event5Ref = myRootRef.childByAppendingPath("AMF Kegler's Lane")
+        event5Ref.setValue(["name": "AMF Kegler's Lane", "location": "335 Rivanna Plaza Dr, Charlottesville, VA", "budget": 20, "type": "A", "latitude": 38.092537, "longitude": -78.470342])
+
+        let event6Ref = myRootRef.childByAppendingPath("Regal Cinemas Stonefield 14 & IMAX")
+        event6Ref.setValue(["name": "Regal Cinemas Stonefiled 14 & IMAX", "location": "1954 Swanson Dr, Charlottesville, VA 22901", "budget": 30, "type": "A", "latitude": 38.064978, "longitude": -78.493151])
+        
+        let event7Ref = myRootRef.childByAppendingPath("Humpback Rock")
+        event7Ref.setValue(["name": "Humpback Rock", "location": "5846 Blue Ridge Pkwy, Afton, VA", "budget": 0, "type": "F", "latitude": 37.962861, "longitude": -78.899935])
+        
+        let event8Ref = myRootRef.childByAppendingPath("Carter Mountain Orchard")
+        event8Ref.setValue(["name": "Carter Mountain Orchard", "location": "1435 Carters Mountain Trail, Charlottesville, VA 22901", "budget": 0, "type": "F", "latitude": 37.991732, "longitude": -78.471662])
+        
+        
+        myRootRef.observeEventType(.Value, withBlock: {
+            snapshot in
+//            print("\(snapshot.value["Lemongrass"][0])")
+           // let array = snapshot.value["Lemongrass"] as! NSDictionary
+            ///print(array["budget"]!)
+            
+        })
+        
+        
 
         // ****************************************************************************
         // Uncomment this line if you want to enable Crash Reporting
