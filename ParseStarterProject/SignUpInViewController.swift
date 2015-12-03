@@ -70,13 +70,17 @@ class SignUpInViewController: UIViewController {
                     self.performSegueWithIdentifier("signInToNavigation", sender: self)
                 }
                 
-        } else {
+        } else { 
             self.activityIndicator.stopAnimating()
             self.activityIndicator.hidden = true
                 
             
             if let _: AnyObject = error!.userInfo["error"] {
-                
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert: UIAlertView = UIAlertView(title: "Email Taken", message: "This user is already registered", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
+                    
+                })
                 }
        }
         
@@ -102,6 +106,12 @@ class SignUpInViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 
                 if let _: AnyObject = error!.userInfo["error"] {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alert: UIAlertView = UIAlertView(title: "Invalid Login", message: "Incorrect email or password", delegate: nil, cancelButtonTitle: "OK")
+                        alert.show()
+                        
+                        
+                    })
                    
                 }
             }
@@ -130,7 +140,7 @@ class SignUpInViewController: UIViewController {
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
-        
+       
 
         
         //tap gesture

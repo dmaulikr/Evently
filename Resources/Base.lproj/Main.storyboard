@@ -36,10 +36,10 @@
                                     <action selector="signIn:" destination="XU2-xA-ThE" eventType="touchUpInside" id="W3R-MO-Xfh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pjz-Nf-XPp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pjz-Nf-XPp">
                                 <rect key="frame" x="135" y="151" width="315" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycp-pB-MBw">
                                 <rect key="frame" x="197" y="257" width="207" height="21"/>
@@ -112,7 +112,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEt-9T-NKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="1Pm-hn-5xn"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="321"/>
+            <point key="canvasLocation" x="-759" y="321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yzv-iw-Yul">
@@ -143,12 +143,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8M-Yg-2Vf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget (USD)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8M-Yg-2Vf">
                                 <rect key="frame" x="252" y="146" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kor-ne-RL3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance (miles)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kor-ne-RL3">
                                 <rect key="frame" x="252" y="184" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -196,7 +196,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78e-ld-Csu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gg3-kB-BEJ"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="321"/>
+            <point key="canvasLocation" x="909" y="321"/>
         </scene>
         <!--CreateEventViewController-->
         <scene sceneID="ouk-PE-2AL">
@@ -249,7 +249,7 @@
                                 <state key="normal" title="Save Event to Calendar"/>
                                 <connections>
                                     <action selector="makeEvent:" destination="KfK-Ee-XTf" eventType="touchUpInside" id="Mno-La-Ydh"/>
-                                    <segue destination="Y7N-P1-dTo" kind="presentation" id="ZSk-NK-iPx"/>
+                                    <segue destination="peD-98-JTr" kind="presentation" id="K7m-ra-OHj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -342,10 +342,38 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6Z-zc-4B8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="1153"/>
+            <point key="canvasLocation" x="775" y="1158"/>
+        </scene>
+        <!--HomeViewController-->
+        <scene sceneID="pCN-WR-Fyp">
+            <objects>
+                <tableViewController storyboardIdentifier="HomeViewController" title="HomeViewController" id="peD-98-JTr" customClass="HomeViewController" customModule="Evently_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PAB-MN-0Kd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oQE-oB-BR7" customClass="EventTableViewCell" customModule="Evently_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQE-oB-BR7" id="7Am-G0-DmK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="peD-98-JTr" id="pbU-Zw-DzV"/>
+                            <outlet property="delegate" destination="peD-98-JTr" id="pJg-eC-ojg"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="PAB-MN-0Kd" id="1Ph-pZ-rtH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aN-BA-WpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-745" y="1153"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZSk-NK-iPx"/>
-    </inferredMetricsTieBreakers>
 </document>

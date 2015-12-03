@@ -18,6 +18,11 @@ class CreateEventViewController: UIViewController {
     var location: String = ""
     var name: String = ""
     var buttonSound : AVAudioPlayer?
+    var eventTitle: String = ""
+    var format: NSDateFormatter = NSDateFormatter()
+//    self.format.dateFormat = "MM/dd/yyyy"
+    
+   // var eventDate: NSDate = format.dateFromString("12/11/2005")
 //
     @IBOutlet weak var eventTime: UIDatePicker!
     @IBOutlet weak var eventName: UITextField!
@@ -91,6 +96,7 @@ class CreateEventViewController: UIViewController {
                 let nameOfEvent = self.eventName.text
                 event.title = nameOfEvent!
                 event.startDate = self.eventTime.date
+                self.eventTitle = event.title /// just added to send title to home page
                 event.endDate = event.startDate.dateByAddingTimeInterval(60*60) //1 hour long meeting
                 event.calendar = store.defaultCalendarForNewEvents
                 //let err: NSError?
@@ -117,6 +123,14 @@ class CreateEventViewController: UIViewController {
             }
         })
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let toHome = segue.destinationViewController as! HomeViewController
+        toHome.eventTitle = self.eventTitle
+        toHome.recentSegue = "CreateEventViewController"
+        toHome.address = self.location
+        //toHome.distance = CLLocationDistance(distance.text!)!
     }
     
 //    func dismissKeyboard(){

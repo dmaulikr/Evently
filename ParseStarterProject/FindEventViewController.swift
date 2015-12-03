@@ -52,6 +52,7 @@ class FindEventViewController: UIViewController, CLLocationManagerDelegate {
         toResults.budget = Int(budget.text!)!
         toResults.distance = CLLocationDistance(distance.text!)!
     }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
        // let locValue2:CLLocationCoordinate2D = manager.location!

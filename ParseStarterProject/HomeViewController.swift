@@ -1,31 +1,25 @@
 //
 //  HomeViewController.swift
-//  ParseStarterProject-Swift
+//  Evently-ios
 //
-//  Created by Vanessa Dyce on 10/19/15.
+//  Created by Vanessa Dyce on 12/2/15.
 //  Copyright © 2015 Parse. All rights reserved.
 //
 
 import UIKit
-import Parse
-import EventKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var userEmail: UILabel!
-    @IBOutlet weak var eventTitle: UITextField!
-    @IBOutlet weak var findEventButton: UIBarButtonItem!
-    @IBOutlet weak var searchForEventButton: UIButton!
-    
+class HomeViewController: UITableViewController{
+    var eventTitle = String()
+    var savedEvents = [Event]()
+    var recentSegue = String()
+    var address = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.orangeColor()
+        if(recentSegue == "CreateEventViewController"){
+            let newEvent = Event(name: eventTitle, location: address)
+            self.savedEvents.append(newEvent!)
+        }
 
-        self.userEmail.text = PFUser.currentUser()?.username
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.view.addGestureRecognizer(tap)
-        
         // Do any additional setup after loading the view.
     }
 
@@ -34,91 +28,32 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func signOut(sender: AnyObject){
-//        
-//     PFUser.logOut()
-//
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as UIViewController
-//        self.presentViewController(vc, animated: true, completion: nil)
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
-    @IBAction func signOut(sender: AnyObject){
-             PFUser.logOut()
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return savedEvents.count
+    }
+    
+    override func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "EventTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! EventTableViewCell
         
+       
+
         
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    func dismissKeyboard(){
-        eventTitle.resignFirstResponder()
-    }
-    
-    @IBAction func createEvent(sender: AnyObject) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("CreateEventViewController") as UIViewController
-//        self.presentViewController(vc, animated: true, completion: nil)
+        //cell.eventName.text = String(self.eventTitle)
+        cell.eventName.text = String(savedEvents[indexPath.row].location as NSString)
+        //cell.eventLocation.text = String(events2[indexPath.row]["location"] as! NSString)
+        //cell.eventBudget.text = String(events2[indexPath.row]["budget"]!)
+
+        //cell!.textLabel!.text = place.valueForKey("name") as? String
         
-        self.performSegueWithIdentifier("createEventNavigation", sender: self)
+        return cell
     }
     
-    @IBAction func makeEvent(sender: AnyObject){
-        let store = EKEventStore()
-        store.requestAccessToEntityType(EKEntityType.Event, completion: {(accessGranted:Bool, error: NSError?) in
-            if accessGranted == true {
-                let event = EKEvent(eventStore: store)
-                let eventName = self.eventTitle.text
-                event.title = eventName!
-                event.startDate = NSDate() //today
-                event.endDate = event.startDate.dateByAddingTimeInterval(60*60) //1 hour long meeting
-                event.calendar = store.defaultCalendarForNewEvents
-                //let err: NSError?
-                do {
-                    //try store.saveEvent(event, span: EKSpan.ThisEvent)
-                    try store.saveEvent(event, span: EKSpan.ThisEvent)
-                    print("Saved Event")
-                    dispatch_async(dispatch_get_main_queue(), {
-                    let alert: UIAlertView = UIAlertView(title: "Event Saved", message: "You have saved an event to your calendar!", delegate: nil, cancelButtonTitle: "Wahoowa")
-                    alert.show()
-                    })
-                } catch {
-                    // report error
-                }
-                
-                
-                //self.savedEventId = event.eventIdentifier //save event id to access this particular event later
-            } else {
-                print("Need to get permission")
-            }
-        })
-    }
-    
-//    @IBAction func findEvent(sender: AnyObject) {
-//        dispatch_async(dispatch_get_main_queue()){
-//            self.performSegueWithIdentifier("findEventNavigation", sender: self)
-//        }
-//    }
-//    
-//    @IBAction func searchForEvent(sender: AnyObject) {
-//        dispatch_async(dispatch_get_main_queue()){
-//            self.performSegueWithIdentifier("findEventNavigation", sender: self)
-//        }
-//    }
-    
-    
-//    @IBAction func createEvent(sender: AnyObject) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("CreateEventViewController") as UIViewController
-//        self.presentViewController(vc, animated: true, completion: nil)
-//    }
     
 
     /*

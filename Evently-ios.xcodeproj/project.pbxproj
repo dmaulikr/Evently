@@ -24,7 +24,7 @@
 		7649391C1C02BEC200A57B9C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649391B1C02BEC200A57B9C /* libicucore.tbd */; };
 		76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76669D4C1BD45200007C001F /* SignUpInViewController.swift */; };
 		76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76A7492B1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld */; };
-		76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE369C1BD4AF19009801BF /* HomeViewController.swift */; };
+		76F214BB1C0FEC8800C8753D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F214BA1C0FEC8800C8753D /* HomeViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -54,7 +54,7 @@
 		7649391B1C02BEC200A57B9C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		76669D4C1BD45200007C001F /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		76A7492C1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		76DE369C1BD4AF19009801BF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		76F214BA1C0FEC8800C8753D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,12 +133,12 @@
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				76669D4C1BD45200007C001F /* SignUpInViewController.swift */,
-				76DE369C1BD4AF19009801BF /* HomeViewController.swift */,
 				76028B0B1BE0542600DBF4A1 /* CreateEventViewController.swift */,
 				7607D8761BE98E0A00489C71 /* ResultsViewController.swift */,
 				7607D87C1BEADF9800489C71 /* FindEventViewController.swift */,
 				762F6B211BF99E230078F668 /* Event.swift */,
 				762F6B231BFA92BB0078F668 /* EventTableViewCell.swift */,
+				76F214BA1C0FEC8800C8753D /* HomeViewController.swift */,
 			);
 			name = EventlyiOSProject;
 			path = ParseStarterProject;
@@ -272,11 +272,11 @@
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				7607D87D1BEADF9800489C71 /* FindEventViewController.swift in Sources */,
 				76A7492D1BE6A1E000FA73D1 /* CoreDataModel.xcdatamodeld in Sources */,
+				76F214BB1C0FEC8800C8753D /* HomeViewController.swift in Sources */,
 				7607D8771BE98E0A00489C71 /* ResultsViewController.swift in Sources */,
 				76028B0C1BE0542600DBF4A1 /* CreateEventViewController.swift in Sources */,
 				76669D4D1BD45200007C001F /* SignUpInViewController.swift in Sources */,
 				762F6B241BFA92BB0078F668 /* EventTableViewCell.swift in Sources */,
-				76DE369D1BD4AF19009801BF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Evently-ios";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Evently-ios";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

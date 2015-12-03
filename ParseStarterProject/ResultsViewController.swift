@@ -150,64 +150,6 @@ class ResultsViewController: UITableViewController, CLLocationManagerDelegate {
             
         })
         
-       
-//
-//        //conditionally append events if they are within the user's budget
-//        if(event1?.budget <= budget){
-//            let meters: CLLocationDistance = (event1?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            print("miles",miles)
-//            if(miles <= distance){
-//            events.append(event1!)
-//            }
-//        }
-//        if(event2?.budget <= budget){
-//            let meters: CLLocationDistance = (event2?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event2!)
-//            }
-//        }
-//        if(event3?.budget <= budget){
-//            let meters: CLLocationDistance = (event3?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event3!)
-//            }
-//        }
-//        if(event4?.budget <= budget){
-//            let meters: CLLocationDistance = (event4?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event4!)
-//            }
-//        }
-//        if(event5?.budget <= budget){
-//            let meters: CLLocationDistance = (event5?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event5!)
-//            }
-//        }
-//        if(event6?.budget <= budget){
-//            let meters: CLLocationDistance = (event6?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event6!)
-//            }        }
-//        if(event7?.budget <= budget){
-//            let meters: CLLocationDistance = (event7?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event7!)
-//            }        }
-//        if(event8?.budget <= budget){
-//            let meters: CLLocationDistance = (event8?.coordinate.distanceFromLocation(locationManager.location!))!
-//            let miles = meters/1609.34
-//            if(miles <= distance){
-//                events.append(event8!)
-//            }
-//        }
         
     }
     
